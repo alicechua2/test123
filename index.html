@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Item 1</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
+        color: #1f1f1f;
+      }
+
+      .page {
+        max-width: 1180px;
+        margin: 40px auto;
+        padding: 0 20px 50px;
+      }
+
+      .product-layout {
+        display: flex;
+        align-items: flex-start;
+        gap: 50px;
+        background: #fff;
+        padding: 30px 20px 0;
+      }
+
+      .product-gallery {
+        flex: 0 0 420px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-image {
+        width: 100%;
+        max-width: 420px;
+        min-height: 520px;
+        background: linear-gradient(180deg, #dff7c7 0%, #b8e36d 100%);
+        border-radius: 14px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+      }
+
+      .hero-image::before {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 420px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.2));
+        border-radius: 38px 38px 26px 26px;
+        border: 2px solid rgba(255,255,255,0.45);
+        box-shadow: inset 0 0 0 4px rgba(255,255,255,0.18);
+      }
+
+      .hero-image::after {
+        content: "";
+        position: absolute;
+        width: 130px;
+        height: 110px;
+        left: 50%;
+        top: 18%;
+        transform: translateX(-50%);
+        background: rgba(255,255,255,0.2);
+        border-radius: 12px;
+        box-shadow: inset 0 0 0 2px rgba(255,255,255,0.15);
+      }
+
+      .thumbs {
+        display: flex;
+        gap: 12px;
+        margin-top: 18px;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .thumb {
+        width: 68px;
+        height: 68px;
+        border: 1px solid #d5d5d5;
+        background: #ebebeb;
+      }
+
+      .thumb:nth-child(1) { background: linear-gradient(180deg, #dff7c7 0%, #bfe66c 100%); }
+      .thumb:nth-child(2) { background: linear-gradient(180deg, #edf9d8 0%, #c7eb85 100%); }
+      .thumb:nth-child(3) { background: linear-gradient(180deg, #dfeec4 0%, #b9e370 100%); }
+      .thumb:nth-child(4) { background: linear-gradient(180deg, #ecf5d5 0%, #b8d86b 100%); }
+
+      .product-info {
+        flex: 1;
+        min-width: 0;
+        padding-top: 10px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        background: #3da65f;
+        color: white;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+
+      .product-name {
+        font-size: 30px;
+        line-height: 1.2;
+        margin: 0 0 10px;
+        font-weight: 400;
+      }
+
+      .product-meta {
+        font-size: 18px;
+        color: #3d3d3d;
+        margin: 10px 0 18px;
+      }
+
+      .price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        margin: 8px 0 10px;
+        flex-wrap: wrap;
+      }
+
+      .price {
+        font-size: 25px;
+        font-weight: 700;
+      }
+
+      .mrp {
+        color: #6b6b6b;
+        text-decoration: line-through;
+        font-size: 16px;
+      }
+
+      .small-note {
+        color: #666;
+        font-size: 12px;
+      }
+
+      .qty-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin: 18px 0 14px;
+      }
+
+      .qty-box {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #999;
+        height: 42px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .qty-box button {
+        width: 42px;
+        height: 42px;
+        border: none;
+        background: #fff;
+        font-size: 28px;
+        cursor: pointer;
+        color: #1b1b1b;
+      }
+
+      .qty-box span {
+        width: 48px;
+        text-align: center;
+        font-size: 18px;
+      }
+
+      .stock {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .add-cart {
+        width: 100%;
+        max-width: 420px;
+        height: 62px;
+        border: none;
+        background: #f2a24d;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        margin-top: 12px;
+        text-transform: uppercase;
+      }
+
+      .wishlist {
+        display: block;
+        width: 100%;
+        max-width: 420px;
+        text-align: center;
+        margin-top: 16px;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        color: #333;
+      }
+
+      .cert {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 1px solid #c4c4c4;
+        margin: 30px auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f5f2ee;
+        color: #7d6c52;
+        font-size: 12px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 1.4;
+      }
+
+      .tabs {
+        border-top: 1px solid #d9d9d9;
+        margin-top: 40px;
+        display: flex;
+        gap: 0;
+      }
+
+      .tab {
+        padding: 16px 22px;
+        background: #f1f1f1;
+        border-right: 1px solid #d9d9d9;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        color: #666;
+      }
+
+      .tab.active {
+        background: #fff;
+        color: #b94d3f;
+      }
+
+      .tab-content {
+        background: #fff;
+        padding: 28px 18px 0;
+      }
+
+      .tab-content p {
+        margin: 0;
+        font-size: 19px;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .reviews-section {
+        margin-top: 40px;
+        background: #fff;
+        padding: 0 12px 30px;
+      }
+
+      .reviews-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 900px) {
+        .product-layout {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .product-gallery {
+          width: 100%;
+          flex-basis: auto;
+        }
+
+        .product-info {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="product-layout">
+        <div class="product-gallery">
+          <div class="hero-image" aria-label="Product image"></div>
+          <div class="thumbs">
+            <div class="thumb"></div>
+            <div class="thumb"></div>
+            <div class="thumb"></div>
+            <div class="thumb"></div>
+          </div>
+        </div>
+
+        <div class="product-info">
+          <div class="badge">NEW</div>
+          <h1 class="product-name">Test Item 1</h1>
+          <div class="product-meta" data-sku="95561601234567">SKU: 95561601234567</div>
+
+          <div class="price-row">
+            <div class="price">RM11.80</div>
+            <div class="mrp">RM11.21</div>
+          </div>
+
+          <div class="small-note">[Example product detail line]</div>
+
+          <div class="qty-row">
+            <div>QTY:</div>
+            <div class="qty-box" aria-label="Quantity selector">
+              <button type="button" aria-label="Decrease quantity">−</button>
+              <span>1</span>
+              <button type="button" aria-label="Increase quantity">+</button>
+            </div>
+            <div class="stock">Stock Available: 92</div>
+          </div>
+
+          <button class="add-cart" type="button">Add to cart</button>
+          <a href="#" class="wishlist">Add to wishlist</a>
+
+          <div class="cert">HACCP<br />Certified</div>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <div class="tab active">Details</div>
+        <div class="tab">Ingredients</div>
+        <div class="tab">How to Use</div>
+      </div>
+
+      <div class="tab-content">
+        <p>Bird's Nest Drink with Chia Seed + Pandan Leaf has pleasant taste and texture with nutritional value. Suitable to be consumed by everyone.</p>
+      </div>
+
+      <div class="reviews-section">
+        <div class="reviews-wrapper">
+          <div id="ReviewsWidget"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://widget.reviews.io/polaris/build.js"></script>
+    <script src="./reviews-widget.js"></script>
+  </body>
+</html>
