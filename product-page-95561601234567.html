@@ -3,72 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Product Page - 95561601234567</title>
+
 <style>
-  * { box-sizing: border-box; }
-  body {
+* {
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, Helvetica, sans-serif;
     color: #333;
     margin: 0;
     padding: 24px;
     background: #fff;
     font-size: 13px;
-  }
-  .page {
+}
+
+.page {
     max-width: 900px;
     margin: 0 auto;
-  }
-  .product-top {
+}
+
+/* =========================
+   PRODUCT AREA
+========================= */
+
+.product-top {
     display: flex;
     gap: 24px;
-  }
+}
 
-  .gallery {
+.gallery {
     width: 220px;
     flex-shrink: 0;
-  }
-  .main-image-wrap {
+}
+
+.main-image-wrap {
     position: relative;
     border: 1px solid #eee;
     text-align: center;
     padding: 10px;
-  }
-  .main-image-wrap img {
+}
+
+.main-image-wrap img {
     max-width: 100%;
     height: 260px;
     object-fit: contain;
-  }
-  .zoom-icon {
+}
+
+.zoom-icon {
     text-align: center;
     color: #999;
     font-size: 20px;
     margin-top: 6px;
-  }
-  .thumbs {
+}
+
+.thumbs {
     display: flex;
     gap: 8px;
     margin-top: 10px;
-  }
-  .thumb {
+}
+
+.thumb {
     width: 55px;
     height: 55px;
     border: 1px solid #ddd;
     padding: 4px;
     cursor: pointer;
-  }
-  .thumb img {
+}
+
+.thumb img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-  }
-  .thumb.active {
-    border-color: #999;
-  }
+}
 
-  .badge-col {
+.thumb.active {
+    border-color: #999;
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.badge-col {
     width: 40px;
-  }
-  .new-badge {
+}
+
+.new-badge {
     width: 46px;
     height: 46px;
     border-radius: 50%;
@@ -81,78 +104,98 @@
     font-weight: bold;
     text-align: center;
     line-height: 1.1;
-  }
+}
 
-  .info {
+/* =========================
+   PRODUCT INFO
+========================= */
+
+.info {
     flex: 1;
     min-width: 0;
-  }
-  .product-title {
+}
+
+.product-title {
     font-size: 22px;
     font-weight: normal;
     color: #444;
     margin: 0 0 6px 0;
     line-height: 1.25;
-  }
-  .sku-row {
+}
+
+.sku-row {
     font-size: 12px;
     color: #666;
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
     margin-bottom: 12px;
-  }
-  .sku-code {
+}
+
+.sku-code {
     background: #e6e6e6;
     padding: 2px 6px;
-  }
+}
 
-  .price-row {
+.price-row {
     display: flex;
     gap: 60px;
     margin-bottom: 6px;
-  }
-  .price-label {
+}
+
+.price-label {
     font-size: 11px;
     color: #888;
     margin-bottom: 4px;
-  }
-  .price-value {
+}
+
+.price-value {
     font-size: 20px;
     color: #555;
-  }
-  .rewards-value {
+}
+
+.rewards-value {
     font-size: 20px;
     color: #555;
     font-weight: bold;
-  }
-  .login-note {
+}
+
+.login-note {
     color: #c0392b;
     font-size: 12px;
     margin: 4px 0 14px 0;
-  }
-  .login-note a {
+}
+
+.login-note a {
     color: #c0392b;
     text-decoration: none;
-  }
-  .login-note a:hover {
-    text-decoration: underline;
-  }
+}
 
-  .qty-row {
+.login-note a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   QUANTITY
+========================= */
+
+.qty-row {
     display: flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 8px;
-  }
-  .qty-label {
+}
+
+.qty-label {
     font-size: 12px;
     color: #333;
-  }
-  .qty-stepper {
+}
+
+.qty-stepper {
     display: flex;
     border: 1px solid #ccc;
-  }
-  .qty-stepper button {
+}
+
+.qty-stepper button {
     width: 30px;
     height: 28px;
     border: none;
@@ -160,28 +203,35 @@
     cursor: pointer;
     font-size: 14px;
     color: #555;
-  }
-  .qty-stepper button:hover {
+}
+
+.qty-stepper button:hover {
     background: #e9e9e9;
-  }
-  .qty-stepper input {
+}
+
+.qty-stepper input {
     width: 40px;
     text-align: center;
     border: none;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
     font-size: 13px;
-  }
-  .stock-line {
+}
+
+.stock-line {
     font-size: 12px;
     font-weight: bold;
     color: #333;
     padding-bottom: 14px;
     border-bottom: 1px solid #eee;
     margin-bottom: 16px;
-  }
+}
 
-  .btn-cart {
+/* =========================
+   CART
+========================= */
+
+.btn-cart {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -195,39 +245,47 @@
     letter-spacing: 0.5px;
     cursor: pointer;
     border-radius: 2px;
-  }
-  .btn-cart:hover {
-    background: #cf7d15;
-  }
-  .bag-icon {
-    font-size: 16px;
-  }
+}
 
-  .wishlist-link {
+.btn-cart:hover {
+    background: #cf7d15;
+}
+
+.bag-icon {
+    font-size: 16px;
+}
+
+.wishlist-link {
     display: block;
     text-align: center;
     margin: 14px 0;
     color: #c0392b;
     font-size: 12px;
     text-decoration: none;
-  }
-  .wishlist-link:hover {
-    text-decoration: underline;
-  }
+}
 
-  .divider {
+.wishlist-link:hover {
+    text-decoration: underline;
+}
+
+.divider {
     border: none;
     border-top: 1px solid #eee;
     margin: 14px 0;
-  }
+}
 
-  .haccp {
+/* =========================
+   HACCP
+========================= */
+
+.haccp {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-top: 30px;
-  }
-  .haccp-badge {
+}
+
+.haccp-badge {
     width: 55px;
     height: 55px;
     border-radius: 50%;
@@ -241,21 +299,28 @@
     color: #6b5a35;
     text-align: center;
     font-weight: bold;
-  }
-  .haccp-text {
+}
+
+.haccp-text {
     font-size: 10px;
     color: #555;
     line-height: 1.4;
-  }
+}
 
-  .tabs-section {
+/* =========================
+   PRODUCT TABS
+========================= */
+
+.tabs-section {
     margin-top: 24px;
-  }
-  .tab-buttons {
+}
+
+.tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
-  }
-  .tab-btn {
+}
+
+.tab-btn {
     padding: 10px 20px;
     background: none;
     border: none;
@@ -263,179 +328,1045 @@
     font-size: 13px;
     cursor: pointer;
     color: #888;
-  }
-  .tab-btn.active {
+}
+
+.tab-btn.active {
     color: #8b1a2b;
     border-bottom-color: #8b1a2b;
     font-weight: bold;
-  }
-  .tab-btn:not(.active) {
+}
+
+.tab-btn:not(.active) {
     color: #4a90d9;
-  }
-  .tab-content {
+}
+
+.tab-content {
     padding: 18px 4px;
     color: #4a90d9;
     line-height: 1.6;
     display: none;
-  }
-  .tab-content.active {
+}
+
+.tab-content.active {
     display: block;
-  }
+}
 
-  .reviews-section {
-    margin-top: 0;
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews-section {
+    margin-top: 30px;
     padding-top: 18px;
-  }
+    border-top: 1px solid #eee;
+}
 
-  .bottom-bar {
+.reviews-title {
+    font-size: 18px;
+    color: #333;
+    margin: 0 0 18px 0;
+    font-weight: 600;
+}
+
+/* =========================
+   REVIEWS.IO CUSTOM STYLING
+========================= */
+
+#ReviewsWidget {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* =========================
+   BOTTOM BAR
+========================= */
+
+.bottom-bar {
     margin-top: 20px;
     height: 8px;
     background: #eee;
     position: relative;
-  }
-  .bottom-bar-fill {
+}
+
+.bottom-bar-fill {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     width: 55%;
     background: #8b1a2b;
-  }
-  .bottom-bar-close {
+}
+
+.bottom-bar-close {
     position: absolute;
     right: -20px;
     top: -6px;
     color: #999;
     cursor: pointer;
     font-size: 14px;
-  }
+}
 
-  @media (max-width: 600px) {
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 14px;
+    }
+
     .product-top {
-      flex-wrap: wrap;
+        flex-wrap: wrap;
+        gap: 14px;
     }
+
     .gallery {
-      width: 100%;
+        width: 100%;
     }
+
+    .main-image-wrap img {
+        height: 240px;
+    }
+
     .badge-col {
-      order: -1;
-      width: auto;
+        order: -1;
+        width: auto;
     }
-  }
+
+    .info {
+        width: 100%;
+    }
+
+    .product-title {
+        font-size: 20px;
+    }
+
+    .price-row {
+        gap: 30px;
+    }
+
+    .tab-buttons {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .tab-btn {
+        padding: 10px 14px;
+        flex-shrink: 0;
+    }
+
+    .reviews-section {
+        margin-top: 24px;
+        padding-top: 14px;
+    }
+}
 </style>
 </head>
+
 <body>
+
 <div class="page">
 
-  <div class="product-top">
-    <div class="gallery">
-      <div class="main-image-wrap">
-        <img id="mainImage" src="https://www.euyansang.com.my/on/demandware.static/-/Sites-EYS_MY_Nav_Catalog/en_MY/dw3b150a00/Resize/eysmy_955616010717_1000x1000.jpg" alt="Bird's Nest Drink">
-      </div>
-      <div class="zoom-icon">&#128269;</div>
-      <div class="thumbs">
-        <div class="thumb active" onclick="setThumb(this, 'https://www.euyansang.com.my/on/demandware.static/-/Sites-EYS_MY_Nav_Catalog/en_MY/dw3b150a00/Resize/eysmy_955616010717_1000x1000.jpg')">
-          <img src="https://www.euyansang.com.my/on/demandware.static/-/Sites-EYS_MY_Nav_Catalog/en_MY/dw3b150a00/Resize/eysmy_955616010717_1000x1000.jpg" alt="thumb1">
+    <!-- =========================
+         PRODUCT INFORMATION
+    ========================== -->
+
+    <div class="product-top">
+
+        <!-- PRODUCT IMAGE -->
+        <div class="gallery">
+
+            <div class="main-image-wrap">
+                <img
+                    id="mainImage"
+                    src="https://www.euyansang.com.my/on/demandware.static/-/Sites-EYS_MY_Nav_Catalog/en_MY/dw3b150a00/Resize/eysmy_955616010717_1000x1000.jpg"
+                    alt="Bird's Nest Drink">
+            </div>
+
+            <div class="zoom-icon">&#128269;</div>
+
+            <div class="thumbs">
+
+                <div
+                    class="thumb active"
+                    onclick="setThumb(
+                        this,
+                        'https://www.euyansang.com.my/on/demandware.static/-/Sites-EYS_MY_Nav_Catalog/en_MY/dw3b150a00/Resize/eysmy_955616010717_1000x1000.jpg'
+                    )">
+
+                    <img
+                        src="https://www.euyansang.com.my/on/demandware.static/-/Sites-EYS_MY_Nav_Catalog/en_MY/dw3b150a00/Resize/eysmy_955616010717_1000x1000.jpg"
+                        alt="thumb1">
+
+                </div>
+
+                <div
+                    class="thumb"
+                    onclick="setThumb(
+                        this,
+                        'https://www.euyansang.com.my/on/demandware.static/-/Sites-EYS_MY_Nav_Catalog/en_MY/dw3b150a00/Resize/eysmy_955616010717_1000x1000.jpg'
+                    )">
+
+                    <img
+                        src="https://www.euyansang.com.my/on/demandware.static/-/Sites-EYS_MY_Nav_Catalog/en_MY/dw3b150a00/Resize/eysmy_955616010717_1000x1000.jpg"
+                        alt="thumb2">
+
+                </div>
+
+            </div>
+
         </div>
-        <div class="thumb" onclick="setThumb(this, 'https://www.euyansang.com.my/on/demandware.static/-/Sites-EYS_MY_Nav_Catalog/en_MY/dw3b150a00/Resize/eysmy_955616010717_1000x1000.jpg')">
-          <img src="https://www.euyansang.com.my/on/demandware.static/-/Sites-EYS_MY_Nav_Catalog/en_MY/dw3b150a00/Resize/eysmy_955616010717_1000x1000.jpg" alt="thumb2">
+
+
+        <!-- NEW BADGE -->
+        <div class="badge-col">
+            <div class="new-badge">NEW</div>
         </div>
-      </div>
-    </div>
 
-    <div class="badge-col">
-      <div class="new-badge">NEW</div>
-    </div>
 
-    <div class="info">
-      <h1 class="product-title">Bird's Nest Drink (Bird's Nest+Chia Seed+Pandan)</h1>
-      <div class="sku-row">
-        <span class="sku-code" data-sku="95561601234567">95561601234567</span> - 170ml
-      </div>
+        <!-- PRODUCT DETAILS -->
+        <div class="info">
 
-      <div class="price-row">
-        <div>
-          <div class="price-label">RSP</div>
-          <div class="price-value">RM11.80</div>
+            <h1 class="product-title">
+                Bird's Nest Drink (Bird's Nest+Chia Seed+Pandan)
+            </h1>
+
+            <div class="sku-row">
+                <span
+                    class="sku-code"
+                    id="productSku"
+                    data-sku="95561601234567">
+                    95561601234567
+                </span>
+                - 170ml
+            </div>
+
+
+            <div class="price-row">
+
+                <div>
+                    <div class="price-label">RSP</div>
+                    <div class="price-value">RM11.80</div>
+                </div>
+
+                <div>
+                    <div class="price-label">EU REWARDS</div>
+                    <div class="rewards-value">RM11.21</div>
+                </div>
+
+            </div>
+
+
+            <div class="login-note">
+                [
+                <a href="#">
+                    Login as EU Rewards to Get Members' Discount
+                </a>
+                ]
+            </div>
+
+
+            <!-- QTY -->
+            <div class="qty-row">
+
+                <span class="qty-label">
+                    QTY:
+                </span>
+
+                <div class="qty-stepper">
+
+                    <button onclick="changeQty(-1)">
+                        &minus;
+                    </button>
+
+                    <input
+                        type="text"
+                        id="qtyInput"
+                        value="1"
+                        readonly>
+
+                    <button onclick="changeQty(1)">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="stock-line">
+                Stock Available : 92
+            </div>
+
+
+            <button class="btn-cart">
+                <span class="bag-icon">
+                    &#128092;
+                </span>
+                ADD TO CART
+            </button>
+
+
+            <a href="#" class="wishlist-link">
+                ADD TO WISHLIST
+            </a>
+
+
+            <hr class="divider">
+
+
+            <!-- HACCP -->
+            <div class="haccp">
+
+                <div class="haccp-badge">
+                    HACCP<br>
+                    Certified
+                </div>
+
+                <div class="haccp-text">
+                    Product is produced by<br>
+                    <strong>HACCP</strong><br>
+                    Certified Company
+                </div>
+
+            </div>
+
         </div>
-        <div>
-          <div class="price-label">EU REWARDS</div>
-          <div class="rewards-value">RM11.21</div>
+
+    </div>
+
+
+    <!-- =========================
+         PRODUCT TABS
+    ========================== -->
+
+    <div class="tabs-section">
+
+        <div class="tab-buttons">
+
+            <button
+                class="tab-btn active"
+                onclick="showTab(this, 'details')">
+                DETAILS
+            </button>
+
+            <button
+                class="tab-btn"
+                onclick="showTab(this, 'ingredients')">
+                INGREDIENTS
+            </button>
+
+            <button
+                class="tab-btn"
+                onclick="showTab(this, 'howtouse')">
+                HOW TO USE
+            </button>
+
         </div>
-      </div>
-      <div class="login-note">[<a href="#">Login as EU Rewards to Get Members' Discount</a>]</div>
 
-      <div class="qty-row">
-        <span class="qty-label">QTY:</span>
-        <div class="qty-stepper">
-          <button onclick="changeQty(-1)">&minus;</button>
-          <input type="text" id="qtyInput" value="1" readonly>
-          <button onclick="changeQty(1)">+</button>
+
+        <div
+            class="tab-content active"
+            id="details">
+
+            Bird's Nest Drink with Chia Seed + Pandan Leaf has pleasant taste and texture with nutritional value. Suitable to be consumed by everyone.
+
         </div>
-      </div>
-      <div class="stock-line">Stock Available : 92</div>
 
-      <button class="btn-cart"><span class="bag-icon">&#128092;</span> ADD TO CART</button>
-      <a href="#" class="wishlist-link">ADD TO WISHLIST</a>
-      <hr class="divider">
 
-      <div class="haccp">
-        <div class="haccp-badge">HACCP<br>Certified</div>
-        <div class="haccp-text">Product is produced by<br><strong>HACCP</strong><br>Certified Company</div>
-      </div>
-    </div>
-  </div>
+        <div
+            class="tab-content"
+            id="ingredients">
 
-  <div class="tabs-section">
-    <div class="tab-buttons">
-      <button class="tab-btn active" onclick="showTab(this, 'details')">DETAILS</button>
-      <button class="tab-btn" onclick="showTab(this, 'ingredients')">INGREDIENTS</button>
-      <button class="tab-btn" onclick="showTab(this, 'howtouse')">HOW TO USE</button>
-    </div>
-    <div class="tab-content active" id="details">
-      Bird's Nest Drink with Chia Seed + Pandan Leaf has pleasant taste and texture with nutritional value. Suitable to be consumed by everyone.
-    </div>
-    <div class="tab-content" id="ingredients">
-      Bird's Nest Extract, Water, Rock Sugar, Chia Seed, Pandan Leaf Extract, Stabilizer.
-    </div>
-    <div class="tab-content" id="howtouse">
-      Serve chilled or at room temperature. Shake well before opening. Best consumed within a day after opening.
-    </div>
-  </div>
+            Bird's Nest Extract, Water, Rock Sugar, Chia Seed, Pandan Leaf Extract, Stabilizer.
 
-  <div class="reviews-section">
-    <div id="ReviewsWidget"></div>
-  </div>
+        </div>
 
-  <div class="bottom-bar">
-    <div class="bottom-bar-fill"></div>
-    <span class="bottom-bar-close">&times;</span>
-  </div>
+
+        <div
+            class="tab-content"
+            id="howtouse">
+
+            Serve chilled or at room temperature. Shake well before opening. Best consumed within a day after opening.
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         REVIEWS.IO
+    ========================== -->
+
+    <div class="reviews-section">
+
+        <h2 class="reviews-title">
+            Customer Reviews
+        </h2>
+
+        <div id="ReviewsWidget"></div>
+
+    </div>
+
+
+    <!-- =========================
+         BOTTOM BAR
+    ========================== -->
+
+    <div class="bottom-bar">
+
+        <div class="bottom-bar-fill"></div>
+
+        <span class="bottom-bar-close">
+            &times;
+        </span>
+
+    </div>
 
 </div>
 
- <script src="https://widget.reviews.io/polaris/build.js"></script>
-<script src="./reviews-widget.js"></script>
+
+<!-- =========================
+     REVIEWS.IO SCRIPT
+========================== -->
+
+<script src="https://widget.reviews.io/polaris/build.js"></script>
+
+
 <script>
-  function changeQty(delta) {
-    const input = document.getElementById('qtyInput');
-    let val = parseInt(input.value, 10) || 1;
-    val = Math.max(1, val + delta);
-    input.value = val;
-  }
 
-  function setThumb(el, src) {
-    document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-    el.classList.add('active');
-    document.getElementById('mainImage').src = src;
-  }
+/*
+===========================================================
+REVIEWS.IO PRODUCT REVIEW SETUP
+===========================================================
 
-  function showTab(btn, id) {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById(id).classList.add('active');
-  }
+The SKU is automatically taken from:
+
+<span id="productSku" data-sku="95561601234567">
+
+When this demo is moved to the real SFCC product page,
+the same code can read the actual product SKU.
+
+===========================================================
+*/
+
+(function () {
+
+    function loadReviewsWidget() {
+
+        const skuElement = document.getElementById('productSku');
+
+        if (!skuElement) {
+            console.error('REVIEWS.io: Product SKU element not found.');
+            return;
+        }
+
+        const sku = skuElement.getAttribute('data-sku');
+
+        if (!sku) {
+            console.error('REVIEWS.io: Product SKU is empty.');
+            return;
+        }
+
+        if (typeof ReviewsWidget === 'undefined') {
+            console.error('REVIEWS.io: ReviewsWidget library has not loaded.');
+            return;
+        }
+
+
+        new ReviewsWidget('#ReviewsWidget', {
+
+            /*
+             * REVIEWS.io account/store
+             */
+            store: 'www.euyansang.com.my-en_MY-home',
+
+            widget: 'polaris',
+
+
+            /* =========================
+               CONTENT
+            ========================= */
+
+            options: {
+
+                types: 'product_review,questions',
+
+                enable_sentiment_analysis: true,
+
+                lang: 'en',
+
+                layout: '',
+
+                per_page: 15,
+
+
+                store_review: {
+                    hide_if_no_results: false
+                },
+
+
+                third_party_review: {
+                    hide_if_no_results: false
+                },
+
+
+                /* =========================
+                   PRODUCT REVIEW
+                ========================= */
+
+                product_review: {
+
+                    /*
+                     * Automatically use the
+                     * product SKU from the page.
+                     */
+                    sku: sku,
+
+                    hide_if_no_results: false
+                },
+
+
+                /* =========================
+                   QUESTIONS
+                ========================= */
+
+                questions: {
+
+                    hide_if_no_results: false,
+
+                    enable_ask_question: true,
+
+                    enable_ask_question_button_style: false,
+
+                    show_dates: true,
+
+                    include_qna_structured_data: true,
+
+                    grouping: sku
+
+                },
+
+
+                /* =========================
+                   HEADER
+                ========================= */
+
+                header: {
+
+                    enable_summary: true,
+
+                    enable_ratings: true,
+
+                    enable_attributes: true,
+
+                    enable_image_gallery: true,
+
+                    enable_percent_recommended: false,
+
+                    enable_write_review: true,
+
+                    enable_ask_question: true,
+
+                    enable_sub_header: true,
+
+                    rating_decimal_places: 2,
+
+                    use_write_review_button: false,
+
+                    enable_if_no_results: false,
+
+                    show_review_title_field: false
+
+                },
+
+
+                /* =========================
+                   AI SUMMARY
+                ========================= */
+
+                sentiment: {
+
+                    badge_text: 'Our Customers Say',
+
+                    enable_rating_breakdown: false
+
+                },
+
+
+                /* =========================
+                   FILTERING
+                ========================= */
+
+                filtering: {
+
+                    enable: true,
+
+                    enable_text_search: true,
+
+                    enable_sorting: true,
+
+                    enable_product_filter: false,
+
+                    enable_media_filter: true,
+
+                    enable_overall_rating_filter: true,
+
+                    enable_language_filter: false,
+
+                    enable_language_filter_language_change: false,
+
+                    enable_ratings_filters: true,
+
+                    enable_attributes_filters: true,
+
+                    enable_expanded_filters: false
+
+                },
+
+
+                /* =========================
+                   REVIEWS
+                ========================= */
+
+                reviews: {
+
+                    enable_avatar: true,
+
+                    enable_reviewer_name: true,
+
+                    enable_reviewer_address: true,
+
+                    reviewer_address_format: 'city, country',
+
+                    enable_verified_badge: true,
+
+                    verified_badge_position: '',
+
+                    enable_subscriber_badge: true,
+
+                    review_content_filter: 'undefined',
+
+                    enable_reviewer_recommends: true,
+
+                    enable_attributes: true,
+
+                    enable_product_name: true,
+
+                    enable_link_product: false,
+
+                    enable_review_title: undefined,
+
+                    enable_replies: true,
+
+                    enable_images: true,
+
+                    enable_ratings: true,
+
+                    enable_share: true,
+
+                    enable_helpful_vote: true,
+
+                    enable_helpful_display: true,
+
+                    enable_report: true,
+
+                    enable_date: true,
+
+                    date_format: 'undefined',
+
+                    date_location: 'undefined',
+
+                    enable_third_party_source: true,
+
+                    enable_duplicate_reviews: undefined,
+
+                    combine_title_stars: true,
+
+                    show_untranslated: false
+
+                }
+
+            },
+
+
+            /* =========================
+               TRANSLATIONS
+            ========================= */
+
+            translations: {
+
+                'Verified Customer': 'Verified Customer'
+
+            },
+
+
+            /* =========================
+               REVIEWS.IO DESIGN
+            ========================= */
+
+            styles: {
+
+                '--base-font-size': '16px',
+
+
+                /* BUTTONS */
+
+                '--common-button-font-family': 'inherit',
+
+                '--common-button-font-size': '16px',
+
+                '--common-button-font-weight': '500',
+
+                '--common-button-letter-spacing': '0',
+
+                '--common-button-text-transform': 'none',
+
+                '--common-button-vertical-padding': '8px',
+
+                '--common-button-horizontal-padding': '20px',
+
+                '--common-button-border-width': '2px',
+
+                '--common-button-border-radius': '20px',
+
+
+                /* PRIMARY BUTTON */
+
+                '--primary-button-bg-color': '#7A0000',
+
+                '--primary-button-border-color': '#7A0000',
+
+                '--primary-button-text-color': '#ffffff',
+
+
+                /* SECONDARY BUTTON */
+
+                '--secondary-button-bg-color': '#00000000',
+
+                '--secondary-button-border-color': '#7A0000',
+
+                '--secondary-button-text-color': '#7A0000',
+
+
+                /* STARS */
+
+                '--common-star-color': '#FFD700',
+
+                '--common-star-disabled-color': 'rgba(0,0,0,0.25)',
+
+                '--medium-star-size': '22px',
+
+                '--small-star-size': '19px',
+
+
+                /* HEADINGS */
+
+                '--heading-text-color': '#333333',
+
+                '--heading-text-font-weight': '600',
+
+                '--heading-text-font-family': 'inherit',
+
+                '--heading-text-line-height': '1.4',
+
+                '--heading-text-letter-spacing': '0',
+
+                '--heading-text-transform': 'none',
+
+
+                /* BODY */
+
+                '--body-text-color': '#666666',
+
+                '--body-text-font-weight': '100',
+
+                '--body-text-font-family': 'inherit',
+
+                '--body-text-line-height': '125%',
+
+                '--body-text-letter-spacing': '0',
+
+                '--body-text-transform': 'none',
+
+
+                /* INPUTS */
+
+                '--inputfield-text-font-family': 'inherit',
+
+                '--input-text-font-size': '14px',
+
+                '--inputfield-text-font-weight': '400',
+
+                '--inputfield-text-color': '#0E1311',
+
+                '--inputfield-border-color': 'rgba(0,0,0,0.2)',
+
+                '--inputfield-background-color': '#00000000',
+
+                '--inputfield-border-width': '1px',
+
+                '--inputfield-border-radius': '10px',
+
+
+                /* BORDERS */
+
+                '--common-border-color': 'rgba(0,0,0,0.15)',
+
+                '--common-border-width': '1px',
+
+                '--common-sidebar-width': '190px',
+
+
+                /* FILTERS */
+
+                '--filters-panel-bg-color': 'transparent',
+
+                '--filters-panel-font-size': '16px',
+
+                '--filters-panel-text-color': '#0E1311',
+
+                '--filters-panel-horizontal-padding': '0',
+
+                '--filters-panel-vertical-padding': '0',
+
+
+                /* SLIDER */
+
+                '--slider-indicator-bg-color': 'rgba(0,0,0,0.1)',
+
+                '--slider-indicator-button-color': '#0E1311',
+
+                '--slider-indicator-width': '190px',
+
+
+                /* BADGES */
+
+                '--badge-icon-color': '#7A0000',
+
+                '--badge-icon-font-size': 'inherit',
+
+                '--badge-text-color': '#0E1311',
+
+                '--badge-text-font-size': 'inherit',
+
+                '--badge-text-letter-spacing': 'inherit',
+
+                '--badge-text-transform': 'none',
+
+
+                /* AUTHOR */
+
+                '--author-font-size': 'inherit',
+
+                '--author-text-transform': 'none',
+
+
+                /* AVATAR */
+
+                '--avatar-thumbnail-size': '60px',
+
+                '--avatar-thumbnail-border-radius': '100px',
+
+                '--avatar-thumbnail-text-color': '#0E1311',
+
+                '--avatar-thumbnail-bg-color': 'rgba(0,0,0,0.1)',
+
+
+                /* REVIEW PHOTOS */
+
+                '--photo-video-thumbnail-size': '80px',
+
+                '--photo-video-thumbnail-border-radius': '10px',
+
+
+                /* MEDIA */
+
+                '--mediaslider-scroll-button-icon-color': '#0E1311',
+
+                '--mediaslider-scroll-button-bg-color': 'rgba(255,255,255,0.85)',
+
+                '--mediaslider-overlay-text-color': '#ffffff',
+
+                '--mediaslider-overlay-bg-color': 'rgba(0,0,0,0.8)',
+
+                '--mediaslider-item-size': '110px',
+
+
+                /* PAGINATION */
+
+                '--pagination-tab-text-color': '#0E1311',
+
+                '--pagination-tab-text-transform': 'none',
+
+                '--pagination-tab-text-letter-spacing': '0',
+
+                '--pagination-tab-text-font-size': '16px',
+
+                '--pagination-tab-text-font-weight': '600',
+
+
+                /* ACTIVE PAGINATION */
+
+                '--pagination-tab-active-text-color': '#0E1311',
+
+                '--pagination-tab-active-font-weight': '600',
+
+                '--pagination-tab-active-border-color': '#0E1311',
+
+                '--pagination-tab-border-width': '3px',
+
+
+                /* AI SUMMARY */
+
+                '--sentiment-base-font-size': '15px',
+
+                '--sentiment-panel-bg-color': '#00000000',
+
+                '--sentiment-panel-border-size': '1px',
+
+                '--sentiment-panel-border-color': 'rgba(0,0,0,0.1)',
+
+                '--sentiment-panel-border-radius': '10px',
+
+                '--sentiment-panel-shadow-size': '0px',
+
+                '--sentiment-panel-shadow-color': 'rgba(0,0,0,0.1)',
+
+                '--sentiment-heading-text-color': '#0E1311',
+
+                '--sentiment-heading-text-font-weight': '600',
+
+                '--sentiment-heading-text-font-family': 'inherit',
+
+                '--sentiment-heading-text-line-height': '1.4',
+
+                '--sentiment-heading-text-letter-spacing': '0',
+
+                '--sentiment-body-text-color': '#0E1311',
+
+                '--sentiment-body-text-font-weight': '400',
+
+                '--sentiment-body-text-line-height': '1.4',
+
+                '--sentiment-panel-vertical-padding': '20px',
+
+                '--sentiment-panel-horizontal-padding': '15px',
+
+                '--sentiment-header-text-color': '#7A0000',
+
+                '--sentiment-header-text-font-size': '12px',
+
+                '--sentiment-header-text-weight': 'inherit',
+
+                '--sentiment-header-bg-color': 'rgba(0,0,0,0.04)',
+
+                '--sentiment-header-border-radius': '50px',
+
+                '--sentiment-header-vertical-padding': '7px',
+
+                '--sentiment-header-horizontal-padding': '10px'
+
+            }
+
+        });
+
+    }
+
+
+    /*
+     * Wait until REVIEWS.io is available.
+     */
+    if (document.readyState === 'loading') {
+
+        document.addEventListener(
+            'DOMContentLoaded',
+            loadReviewsWidget
+        );
+
+    } else {
+
+        loadReviewsWidget();
+
+    }
+
+})();
+
 </script>
+
+
+<!-- =========================
+     PAGE FUNCTIONS
+========================== -->
+
+<script>
+
+function changeQty(delta) {
+
+    const input =
+        document.getElementById('qtyInput');
+
+    let val =
+        parseInt(input.value, 10) || 1;
+
+    val =
+        Math.max(1, val + delta);
+
+    input.value = val;
+
+}
+
+
+function setThumb(el, src) {
+
+    document
+        .querySelectorAll('.thumb')
+        .forEach(function (t) {
+
+            t.classList.remove('active');
+
+        });
+
+    el.classList.add('active');
+
+    document
+        .getElementById('mainImage')
+        .src = src;
+
+}
+
+
+function showTab(btn, id) {
+
+    document
+        .querySelectorAll('.tab-btn')
+        .forEach(function (b) {
+
+            b.classList.remove('active');
+
+        });
+
+
+    document
+        .querySelectorAll('.tab-content')
+        .forEach(function (c) {
+
+            c.classList.remove('active');
+
+        });
+
+
+    btn.classList.add('active');
+
+    document
+        .getElementById(id)
+        .classList.add('active');
+
+}
+
+</script>
+
 </body>
 </html>
